@@ -165,8 +165,12 @@ function getUserByUsername(username, users) {
  * this (and any other non public endpoint) with:
  * curl -X GET -H "Authorization: Bearer INSERT_TOKEN_HERE" http://localhost:9000/sacred
  */
-router.get('/api/v1', async(ctx) => {
-  ctx.body = 'Hello ' + ctx.state.user.data.name
+router.get('/api/v1/user', async(ctx) => {
+  ctx.body = {
+    name: ctx.state.user.data.name,
+    username: ctx.state.user.data.username,
+    email: ctx.state.user.data.email,
+  };
 });
 
 router.post('/api/v1/registration', async(ctx, next) => {
