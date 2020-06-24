@@ -5,12 +5,6 @@ const baseFilesDir = process.env.BASE_FILES_DIR || __dirname;
 const fs = require("fs");
 const path = require("path");
 
-let router;
-
-function setRouter(newRouter) {
-  router = newRouter;
-}
-
 async function getFileList(ctx) {
 
   // get all files first

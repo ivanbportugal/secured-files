@@ -40,7 +40,7 @@ class UserServiceController {
   }
 
   setUpInterceptor() {
-    // TODO set up axios bearer token header
+    // set up axios bearer token header
     axios.interceptors.request.use(function (config) {
       const token = this.getToken();
       config.headers.Authorization =  token ? `Bearer ${token}` : '';
